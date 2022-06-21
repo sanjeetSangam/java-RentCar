@@ -8,8 +8,7 @@ public class RentCarRunner {
 
 	public static void main(String[] args) {
 		
-		Customer c = new Customer(0,"shyamu","Ramu","Z",1);
-		c.add();
+		Customer c = new Customer(0,"Sangam","1234567891234567","919006079833",1);
 		c.print();
 		
 	}

@@ -22,9 +22,16 @@ public class Customer extends Person implements Serializable{
 	}
 	
 	
-	public Customer(int id, String aadhar, String name, String contact_no, int bill) {
-		super(id, aadhar, name, contact_no);
-		this.bill =bill;
+	public Customer(int id,  String name, String aadhar, String contact, int bill) {
+		super(id, aadhar, name, contact);
+		
+		
+		if (isNameValid(name) && isAadharValid(aadhar) && isContactValid(contact) && isIDValid(id)) {
+			this.bill =bill;
+			this.add();
+		} else {
+			System.out.println("Please provide valid information");
+		}
 	}
 	
 	
@@ -75,6 +82,7 @@ public class Customer extends Person implements Serializable{
 		// TODO Auto-generated method stub
 		
 		ArrayList<Customer> customerList = Customer.View() ;
+
 		
 		if(customerList.isEmpty()) {
 			this.id = 1;
@@ -119,16 +127,6 @@ public class Customer extends Person implements Serializable{
 		catch (IOException e) {
 			e.printStackTrace();
 		}
-		
-		System.out.println("Done");
-		
-		
-		
-		
-		
-		
-		
-		
 	}
 
 	@Override
