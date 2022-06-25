@@ -18,14 +18,10 @@ public abstract class Person implements Serializable {
 	
 	public Person (int id, String name, String aadhar, String contact) {
 		
-		if (isNameValid(name) && isAadharValid(aadhar) && isContactValid(contact) && isIDValid(id) ) {
-			System.out.println(name );
-			
-			this.id = id;
-			this.name = name;
-			this.aadhar = aadhar;
-			this.contact = contact;
-		}
+		this.id = id;
+		this.name = name;
+		this.aadhar = aadhar;
+		this.contact = contact;
 	}
 	
 	public int getId() {

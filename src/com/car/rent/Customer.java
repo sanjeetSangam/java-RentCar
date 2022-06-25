@@ -14,7 +14,7 @@ public class Customer extends Person implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	private int bill;
+	protected int bill;
 	
 	
 	public Customer() {
@@ -23,7 +23,7 @@ public class Customer extends Person implements Serializable{
 	
 	
 	public Customer(int id,  String name, String aadhar, String contact, int bill) {
-		super(id, aadhar, name, contact);
+		super(id,  name, aadhar, contact);
 		
 		
 		if (isNameValid(name) && isAadharValid(aadhar) && isContactValid(contact) && isIDValid(id)) {
@@ -55,10 +55,10 @@ public class Customer extends Person implements Serializable{
 	
 	
 	
-	public static Customer searchByAadhar(String aadhar)
-	{
-		// code
-	}
+//	public static Customer searchByAadhar(String aadhar)
+//	{
+//		// code
+//	}
 	
 	public static Customer searchByID(int id)
 	{
@@ -68,7 +68,7 @@ public class Customer extends Person implements Serializable{
 		{
 			if(customerList.get(i).id==id)
 			{
-				return customerList.get(i));
+				return customerList.get(i);
 			}
 		}
 		
